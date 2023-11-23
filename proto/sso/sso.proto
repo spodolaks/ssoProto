@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option go_package = "github.com/spodolaks/ssoProto";
+
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+message RegisterRequest {
+    string email = 1 ;
+    string password = 2;
+}
+
+message RegisterResponse {
+    int64 userId = 1;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+    int32 appId = 3;
+}
+
+message LoginResponse {
+    string token = 1;
+}
+
+message IsAdminRequest {
+    string userId = 1;
+}
+
+message IsAdminResponse {
+    bool isAdmin = 1;
+}
+
