@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/spodolaks/ssoProto";
+option go_package = "spodolaks.sso.v1;ssov1";
 
 service Auth {
     rpc Register (RegisterRequest) returns (RegisterResponse);
